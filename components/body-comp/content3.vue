@@ -6,22 +6,23 @@
         </div>
         <div class="content-card">
             <img :src="ImageBibit" class="content-card-background"/>
+            <div class="imageSlider-nav" @mouseover="stopRotation" @mouseout="startRotation">
+                        <a class="prev" @click="prev"><img :src="Chevronleft"/></a>
+                        <a class="next" @click="next"><img :src="Chevronright"/></a>
+            </div>
             <div>
-                <b-carousel
-                    id="carousel-no-animation"
-                    fade
-                    indicators
-                >
-                    <div class="carousel-inner" v-for="(car, index) in CarAct" v-bind:key="index">
-                        <div class="carousel-item" :class="{ 'active' : index === 0 }">
-                            <div class="carousel-caption">
-                                <span>{{ car.title }}</span>
-                                <p>{{ car.desc }}</p>
-                                <b-button class="carousel-button" variant="outline-light">Selengkapnya</b-button>
-                            </div>
+                <image-slider class="imageSlider">
+                    <transition-group name="fade" tag="div">
+                        <div class="imageSlider-wrapper" v-for="number in [currentNumber]" v-bind:key="number" @mouseover="stopRotation" @mouseout="startRotation">
+                            <span class="white-text">{{ currentContent.title}}</span>
+                            <p class="white-text">{{ currentContent.desc}}</p>
+                            <b-button class="carousel-button" variant="outline-light">Selengkapnya</b-button>
                         </div>
-                    </div>
-                </b-carousel>
+                    </transition-group>
+                    <ol class="carousel-indicators">
+                        <li v-for="(content, index) in CarAct" :key="index" @click="goToSlide(index)" :class="{active: index === currentNumber}"></li>
+                    </ol>
+                </image-slider>
             </div>
         </div>
     </div>
@@ -29,10 +30,13 @@
 
 <script>
 import ImageBibit from '~/assets/assets/image/activity.png'
+import Chevronright from '~/assets/assets/icon/chevron-right.svg'
+import Chevronleft from '~/assets/assets/icon/chevron-left.svg'
+
 export default {
     data(){
         return {
-            ImageBibit,
+            ImageBibit,Chevronright,Chevronleft,
             CarAct: [
                 {
                     title: "Bibit Unggul - Pengembangan Bakat Talenta Muda Indonesia",
@@ -43,15 +47,55 @@ export default {
                     desc: "Sebagai salah satu bentuk implementasi visi GMEDIA dengan menerapkan CSV (Corporate Shared Value), GMEDIA membangun sebuah program bibit unggul yang fokus pada pengembangan minat dan bakat talenta muda yang dibimbing sejak dini untuk menjadi talenta unggul muda. Pada program ini kami fokus dalam bidang Teknologi Informasi, olahraga dan seni budaya. Talenta muda yang ikut dalam program ini akan didampingi oleh para profesional di bidangnya masing-masing.",
                 },
                 {
-                    title: "Lorem more,,, Same lorem, nothing different",
+                    title: "Lorem more,,, Same lorem, nothing different,, writed for the carousel test",
                     desc: "Sebagai salah satu bentuk implementasi visi GMEDIA dengan menerapkan CSV (Corporate Shared Value), GMEDIA membangun sebuah program bibit unggul yang fokus pada pengembangan minat dan bakat talenta muda yang dibimbing sejak dini untuk menjadi talenta unggul muda. Pada program ini kami fokus dalam bidang Teknologi Informasi, olahraga dan seni budaya. Talenta muda yang ikut dalam program ini akan didampingi oleh para profesional di bidangnya masing-masing.",
                 },
-            ]
+            ],
+            currentNumber: 0,
+            timer: null,
         }
+    },
+    mounted: function() {
+        this.startRotation();
+    },
+    methods: {
+        startRotation() {
+            this.timer = setInterval(this.next,7000);
+        },
+        stopRotation() {
+            clearTimeout(this.timer);
+            this.timer = null;
+        },
+        next() {
+            if(this.currentNumber == this.CarAct.length - 1){
+                this.currentNumber = 0;
+            } else {
+                this.currentNumber++;
+            }
+        },
+        prev() {
+            if(this.currentNumber <= 0) {
+				this.currentNumber = this.CarAct.length - 1;
+			} else {
+				this.currentNumber -= 1
+			}
+        },
+        goToSlide(index) {
+            this.currentNumber = index;
+        }
+    },
+    computed: {
+        currentContent(){
+            return this.CarAct[Math.abs(this.currentNumber) % this.CarAct.length];
+        },
     },
 }
 </script>s  
 <style scoped>
+
+.white-text{
+    color:white;
+}
 
 #content3{
     margin: 20px 0 20px 0;
@@ -106,22 +150,21 @@ export default {
     opacity: 0.7;
 }
 
-.carousel-item{
+/* .carousel-item{
     width:  80%;
     height: 514px;
-}
+} */
 
-.carousel-caption{
+/* .carousel-caption{
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
     height: 100%;
     gap: 27px;
-    /* overflow: scroll; */
-}
+} */
 
-.carousel-caption > span{
+/* .carousel-caption > span{
     font-size: 24px;
     font-weight: 700;
     line-height: 32px;
@@ -135,13 +178,116 @@ export default {
     line-height: 28px;
     letter-spacing: 0.5px;
     text-align: left;
-}
+} */
 
 .carousel-button{
     width: 30%;
     margin: 10px 0 10px 0;
 }
-#carousel-no-animation{
-    width: 50%;
+
+
+.timer {
+  position: absolute;
+  bottom: -100px;
 }
+
+.imageSlider {
+  position: absolute;
+  display: block;
+  margin: 20px 0 0 20px;
+  width: 50%;
+  height: 100%;
+}
+
+.imageSlider-nav {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  z-index: 9;
+}
+
+.imageSlider-nav .next,
+.imageSlider-nav .prev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  background: #02539E;
+  opacity: 0.6; 
+  color: #4DB6AC;
+  cursor: pointer;
+}
+
+.imageSlider-nav .next:hover,
+.imageSlider-nav .prev:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.imageSlider-nav .prev {
+  margin-right: 1px;
+}
+
+.imageSlider .imageSlider-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  /* height: 60%; */
+}
+
+.imageSlider-wrapper span{    
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.imageSlider-wrapper p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+
+.imageSlider .imageSlider-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.8s ease;
+  overflow: hidden;
+  visibility: visible;
+  opacity: 1;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+.carousel-indicators{
+    gap: 24px;
+    margin-bottom: 30px; 
+}
+.carousel-indicators li{
+    width: 78px;
+}
+
 </style>

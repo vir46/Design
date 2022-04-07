@@ -54,9 +54,11 @@ export default {
             this.contents2.forEach(content => {
                 content.select = false
             })
-            this.contents2[index].select = true
-            // console.log(index)
+            this.contents2[index].select = true;
         }
+    },
+    mounted: function() {
+        this.toggleSelect(0);
     }
 }
 </script>
@@ -81,6 +83,7 @@ export default {
 .content-menu-item{
     display: flex;
     flex-direction: row;
+    cursor: pointer;
 }
 
 
