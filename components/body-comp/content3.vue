@@ -150,36 +150,6 @@ export default {
     opacity: 0.7;
 }
 
-/* .carousel-item{
-    width:  80%;
-    height: 514px;
-} */
-
-/* .carousel-caption{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    gap: 27px;
-} */
-
-/* .carousel-caption > span{
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32px;
-    letter-spacing: 0em;
-    text-align: left;
-}
-
-.carousel-caption > p{
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 28px;
-    letter-spacing: 0.5px;
-    text-align: left;
-} */
-
 .carousel-button{
     width: 30%;
     margin: 10px 0 10px 0;
@@ -280,7 +250,6 @@ export default {
   opacity: 0;
   visibility: hidden;
 }
-
 
 .carousel-indicators{
     gap: 24px;

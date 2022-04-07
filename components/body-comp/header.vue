@@ -238,10 +238,6 @@ export default {
   visibility: hidden;
 }
 
-/* .carousel-image{
-    height: 474px;
-} */
-
 .under-carousel-menu{
     height: 132px;
     background: radial-gradient(50% 2443.21% at 50% 50%, #1D7CD3 0%, #02539E 100%);
@@ -254,13 +250,11 @@ export default {
 }
 
 .uc-text{
-    /* margin: 0 40px 0 40px; */
     font-size: 20px;
     color: white;
 }
 
 .uc-icon{
-    /* margin-right: 5px; */
     width: 27px;
     height: 29.5px;
 }
