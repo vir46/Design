@@ -1,4 +1,3 @@
-# Front-End-Gmedia-Redesign-V2
 
 ## Build Setup
 
