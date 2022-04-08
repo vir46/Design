@@ -20,9 +20,7 @@
           </div>
         </div>
       </div>
-      <div id="SubNavbar" v-if="isDropdown"
-      data-aos="zoom-in"
-      data-aos-duration="300">
+      <div id="SubNavbar" v-if="isDropdown">
         <div class="sub-title">{{ this.content[indexDropdown].text }}</div>
         <div  class="sub-content">
           <span v-for="(content, index) in content[this.indexDropdown].dropdown" :key="index">
@@ -38,8 +36,6 @@
 <script>
 import Logo from '~/assets/assets/logo.png';
 import Chevrondown from '~/assets/assets/icon/chevron-down.svg';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 export default {
   name: 'Navigation',
@@ -70,9 +66,6 @@ export default {
         }
       }
     },
-  },
-  mounted() {
-    AOS.init();
   },
 }
 </script>
