@@ -1,68 +1,167 @@
 <template>
-    <div id="Navbar">
-        <b-navbar toggleable="sm" type="light" variant="light">
-            <b-navbar-brand href="#">
-            <img :src="Logo" alt="GMedia Logo" height="36px" class="d-inline-block align-text-top">
-            </b-navbar-brand>
-
-            <b-navbar-nav class="ml-auto">
-                <b-nav-item-dropdown text="Produk" right>
-                    <b-dropdown-item href="#">Example 1</b-dropdown-item>
-                    <b-dropdown-item href="#">Example 2</b-dropdown-item>
-                </b-nav-item-dropdown>
-                <b-nav-item-dropdown text="Solusi" right>
-                    <b-dropdown-item href="#">Example 1</b-dropdown-item>
-                    <b-dropdown-item href="#">Example 2</b-dropdown-item>
-                </b-nav-item-dropdown>
-                <b-nav-item-dropdown text="Perusahaan" right>
-                    <b-dropdown-item href="#">Example 1</b-dropdown-item>
-                    <b-dropdown-item href="#">Example 2</b-dropdown-item>
-                </b-nav-item-dropdown>
-                <b-nav-item-dropdown text="Informasi" right>
-                    <b-dropdown-item href="#">Example 1</b-dropdown-item>
-                    <b-dropdown-item href="#">Example 2</b-dropdown-item>
-                </b-nav-item-dropdown>
-                <div class="switch">
-                    <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
-                    <label for="language-toggle"></label>
-                    <span class="on">ID</span>
-                    <span class="off">EN</span>
-                </div>
-                <b-button class="button-login" variant="outline-warning">Login</b-button>
-            </b-navbar-nav>
-        </b-navbar>
-    </div>
+  <div>
+      <div id="Navbar" >
+        <div class="navbar-logo">
+          <img :src="Logo" alt="GMedia Logo">
+        </div>
+        <div class="navbar-content">
+          <div class="content-link">
+            <span v-for="(link, index) in content" :key="index" @click="turnOnDropdown(index)">{{link.text}}<img :class="{'reverse': index == indexDropdown && isDropdown == true}"
+             :src="Chevrondown"/></span>
+          </div>
+          <div class="switch">
+            <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+            <label class="language-label" for="language-toggle"></label>
+            <span class="on">ID</span>
+            <span class="off">EN</span>
+          </div>
+          <div class="button-login">
+            <a href="#">Login</a>
+          </div>
+        </div>
+      </div>
+      <div id="SubNavbar" v-if="isDropdown"
+      data-aos="zoom-in"
+      data-aos-duration="300">
+        <div class="sub-title">{{ this.content[indexDropdown].text }}</div>
+        <div  class="sub-content">
+          <span v-for="(content, index) in content[this.indexDropdown].dropdown" :key="index">
+            <a href="#">
+              {{content.text}}
+            </a>
+          </span>
+        </div>
+      </div>
+  </div>
 </template>
 
 <script>
-import Logo from '../assets/assets/logo.png';
+import Logo from '~/assets/assets/logo.png';
+import Chevrondown from '~/assets/assets/icon/chevron-down.svg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default {
   name: 'Navigation',
   data() {
     return {
-      Logo,
+      Logo,Chevrondown,
+      content: [
+        { text: 'Produk', dropdown: [{ text: 'Produk 1' }, { text: 'Produk 2' }] },
+        { text: 'Solusi', dropdown: [{ text: 'Solusi 1' }, { text: 'Solusi 2' }] },
+        { text: 'Perusahaan', dropdown: [{ text: 'Perusahaan 1' }, { text: 'Perusahaan 2' }] },
+        { text: 'Informasi', dropdown: [{ text: 'Informasi 1' }, { text: 'Informasi 2' }] },
+      ],
+      indexDropdown: 0,
+      isDropdown: false,
     }
-  }
-    
+  },
+  methods: {
+    turnOnDropdown(index) {
+      if(this.isDropdown == false){
+        this.isDropdown = true;
+        this.indexDropdown = index;
+      }else{
+        if(this.indexDropdown == index){
+          this.isDropdown = false;
+          this.indexDropdown = 0;
+        }else{
+          this.indexDropdown = index;
+        }
+      }
+    },
+  },
+  mounted() {
+    AOS.init();
+  },
 }
 </script>
 
 <style scoped>
-#Navbar{
-  z-index: 1;
-  position: relative;
+
+.reverse{
+  transform: rotate(180deg);
 }
 
-.navbar-nav > li{
-  padding-left:10px;
-  padding-right:10px;
+#SubNavbar {
+  position: absolute;
+  width: 100%;
+  height: 84px;
+  background-color: #e9e9e9;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: #02539E solid 2px;
 }
+
+.sub-title{
+  margin-top: 10px;
+  font-weight: bold;
+  width: 60%;
+  border-radius: 15px;
+  height: 20px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-content{
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3vw;
+}
+
+.sub-content span a{
+  color: black;
+}
+#Navbar{
+  width: 100%;
+  height: 84px;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+}
+
+.navbar-logo{
+  display:flex;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-logo img{
+  width: 112px;
+  height: 36px;
+}
+
+.navbar-content{
+  display: flex;
+  width: 47%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1vw;
+  
+}
+
+.content-link{
+  display: flex;
+  gap: 4vw;
+  margin-right: 2vw;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Switch CSS */
 
 .switch {
   position: relative;
   display: inline-block;
-  margin: 0 5px;
+  margin: 0 5px 0 0;
 }
 
 .switch > span {
@@ -151,10 +250,26 @@ input.check-toggle-round-flat:checked + label:after {
   margin-left: 44px;
 }
 
-.button-login{
-    height: 35px;
-    margin-left:15px;
-    margin-right:15px;
+/*  Button CSS */
+
+.button-login a{
+  background-color: transparent;
+  border-color: #ffc107;
+  color: #ffc107;
+  font-size: 14px;
+  border: solid 1px;
+  padding: 8px 15px 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
+.button-login a:hover{
+  background-color: #ffc107;
+  color: #fff;
+  text-decoration: none;
+}
+
+label.language-label{
+  margin: 0;
+}
 </style>

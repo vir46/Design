@@ -11,7 +11,7 @@
             </div>
         </div>
         <div>
-            <image-slider class="imageSlider">
+            <div class="imageSlider">
                 <div class="imageSlider-nav">
                     <a class="prev" @click="prev"><img :src="Chevronleft"/></a>
                     <a class="next" @click="next"><img :src="Chevronright"/></a>
@@ -24,7 +24,7 @@
                 <ol class="carousel-indicators">
                     <li v-for="(image, index) in images" :key="index" @click="goToSlide(index)" :class="{active: index === currentNumber}"></li>
                 </ol>
-            </image-slider>
+            </div>
         </div>
         <div class="under-carousel-menu">
             <span class="uc-text" v-for="(uc, index) in undercarousel" v-bind:key="'B'+ index"><img class="uc-icon" v-bind:src="uc.icon"/>{{ uc.name }}</span>

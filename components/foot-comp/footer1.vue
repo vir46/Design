@@ -85,9 +85,12 @@ export default {
     display: flex;
     flex-direction: column;
     height: 100px;
-    gap: 5px;
+    gap: 10px;
 }
 
+.content-upper-contact img{
+    margin-right: 0.4vw;
+}
 .content-upper-find{
     height: 100px;
     gap: 5px;

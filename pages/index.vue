@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar/>
+    <Navbar class="navbar-component"/>
     <Body/>
     <Footer/>
   </div>
@@ -23,5 +23,11 @@ export default {
 <style>
 *{
   scroll-behavior: smooth;
+}
+
+.navbar-component{
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 </style>

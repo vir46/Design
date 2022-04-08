@@ -11,7 +11,7 @@
                         <a class="next" @click="next"><img :src="Chevronright"/></a>
             </div>
             <div>
-                <image-slider class="imageSlider">
+                <div class="imageSlider">
                     <transition-group name="fade" tag="div">
                         <div class="imageSlider-wrapper" v-for="number in [currentNumber]" v-bind:key="number" @mouseover="stopRotation" @mouseout="startRotation">
                             <span class="white-text">{{ currentContent.title}}</span>
@@ -22,7 +22,7 @@
                     <ol class="carousel-indicators">
                         <li v-for="(content, index) in CarAct" :key="index" @click="goToSlide(index)" :class="{active: index === currentNumber}"></li>
                     </ol>
-                </image-slider>
+                </div>
             </div>
         </div>
     </div>
