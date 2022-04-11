@@ -75,6 +75,7 @@ export default {
     justify-content: space-around;
     align-items: center;
     height: 150px;
+    width: 70%;
 }
 
 .content-upper-logo{

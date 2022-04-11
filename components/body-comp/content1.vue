@@ -23,6 +23,9 @@
                 </div>
                 <img class="content-image" :src="content.imageurl"/>
             </div>
+            <div v-if="index < contents.length - 1">
+                <hr class="dashed">
+            </div>
         </div>
     </div>
 </template>
@@ -61,6 +64,14 @@ export default {
 </script>
 
 <style scoped>
+
+
+hr.dashed {
+  border: 1px solid #EBEBEB;
+  opacity: 0.5;
+  width: 60%;
+}
+
 .content-container{
     margin: 50px 40px 100px 40px;
     display: flex;

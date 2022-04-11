@@ -21,6 +21,7 @@
                 <b-card
                     v-for="(content, index) in contents" v-bind:key="index"
                     :title="content.headtitle"
+                    class="b-card"
                     v-bind:img-src="content.image"
                     style="max-width: 20vw; height: 392px;"
                 >
@@ -90,9 +91,14 @@ export default {
 }
 
 hr.dashed {
-  border-top: 3px solid #bbb;
+  border: 1px solid #EBEBEB;
   opacity: 0.5;
   width: 60%;
+}
+
+.content-head-image{
+    width: 31.313vw;
+    height: 100%;
 }
 
 .content-head{
@@ -100,9 +106,16 @@ hr.dashed {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
     width: 62.292vw;
     gap: 2vw;
     margin: 20px 0 20px 0;
+    box-shadow: 4px 4px 8px 0px #02539E0F;
+}
+
+.b-card{
+    box-shadow: 4px 4px 8px 0px #02539E0F;
 }
 
 .content-title{
@@ -133,8 +146,9 @@ hr.dashed {
     display: flex;
     align-items: left;
     flex-direction: column;
-    width: 574px;
+    width: 29.896vw;
     gap: 10px;
+    padding: 20px;
 }
 
 .content-under{
@@ -154,7 +168,7 @@ hr.dashed {
 }
 
 .content-button{
-    margin-top: 15px;
+    margin: 30px 0 30px 0;
     width: 100%;
     display: flex;
     justify-content: center;

@@ -155,8 +155,8 @@ export default {
 }
 
 .carousel-button{
-    width: 30%;
-    margin: 10px 0 10px 0;
+    width: max-content;
+    margin: 0 0 10px 0;
 }
 
 
@@ -168,10 +168,11 @@ export default {
 .imageSlider {
   position: absolute;
   display: flex;
-  margin: 50px 0 0 50px;
+  /* padding: 50px; */
   width: 50%;
-  height: 90%;
+  height: 100%;
   justify-items: flex-start;
+
 }
 
 .imageSlider-nav {
@@ -211,10 +212,11 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
+  padding: 50px 0 0 50px;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  /* height: 60%; */
+  height: 100%;
 }
 
 .imageSlider-wrapper span{    
@@ -258,7 +260,8 @@ export default {
 
 .carousel-indicators{
     gap: 24px;
-    margin-bottom: 30px; 
+    margin: 0 0 20px 3.5vw;
+    justify-content: flex-start;
 }
 .carousel-indicators li{
     width: 3.125vw;

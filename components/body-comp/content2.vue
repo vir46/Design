@@ -142,9 +142,12 @@ export default {
     font-size: 20px;
     color: #ffffff;
 }
-
+/* div first child */
 .selected > div{
     background-color: #EFEFEF;
+}
+
+.selected > div > span:first-child{
     color: #02539E;
 }
 

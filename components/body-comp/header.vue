@@ -61,7 +61,7 @@ export default {
                 { name: "Government", icon: Govericon},
                 { name: "Hospitality", icon: Hosicon},
                 { name: "Corporate", icon: Corpicon},
-                { name: "Food & Beverages", icon: Fnbicon},
+                { name: "Food & Baverages", icon: Fnbicon},
             ],
             currentNumber: 0,
             timer: null,
@@ -115,17 +115,17 @@ export default {
 .Head-Title-Background{
     position: absolute;
     width: 100%;
-    height: 1000px;
+    height: 900px;
     top: 0;
-    /* left: 0;
-    right: 0; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    z-index: -1;
+    overflow: hidden;
 }
 
 .Head-Title-Text{
-    height: 350px;
+    height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -134,24 +134,24 @@ export default {
 }
 
 .background-right{
+    position: relative;
+    right: -2vw;
     display: block;
     background-size: cover;
     background-color: white;
     width: 40%;
-    height: 100%;
     background-size: cover;
-    z-index: -1;
 }
 .background-left{
+    position: relative;
     display: block;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
+    left: -2vw;
     width: 40%;
     background-size: cover;
     background-color: white;
-    height: 100%;
     background-size: cover;
-    z-index: -1;
 }
 
 .Title{
@@ -257,6 +257,7 @@ export default {
 .uc-icon{
     width: 27px;
     height: 29.5px;
+    margin-right: 0.5vw;
 }
 
 .carousel-indicators{
