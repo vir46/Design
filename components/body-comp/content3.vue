@@ -50,6 +50,10 @@ export default {
                     title: "Lorem more,,, Same lorem, nothing different,, writed for the carousel test",
                     desc: "Sebagai salah satu bentuk implementasi visi GMEDIA dengan menerapkan CSV (Corporate Shared Value), GMEDIA membangun sebuah program bibit unggul yang fokus pada pengembangan minat dan bakat talenta muda yang dibimbing sejak dini untuk menjadi talenta unggul muda. Pada program ini kami fokus dalam bidang Teknologi Informasi, olahraga dan seni budaya. Talenta muda yang ikut dalam program ini akan didampingi oleh para profesional di bidangnya masing-masing.",
                 },
+                {
+                    title: "The Last Part of Carousel",
+                    desc: "Sebagai salah satu bentuk implementasi visi GMEDIA dengan menerapkan CSV (Corporate Shared Value), GMEDIA membangun sebuah program bibit unggul yang fokus pada pengembangan minat dan bakat talenta muda yang dibimbing sejak dini untuk menjadi talenta unggul muda. Pada program ini kami fokus dalam bidang Teknologi Informasi, olahraga dan seni budaya. Talenta muda yang ikut dalam program ini akan didampingi oleh para profesional di bidangnya masing-masing.",
+                },
             ],
             currentNumber: 0,
             timer: null,
@@ -163,10 +167,11 @@ export default {
 
 .imageSlider {
   position: absolute;
-  display: block;
-  margin: 20px 0 0 20px;
+  display: flex;
+  margin: 50px 0 0 50px;
   width: 50%;
-  height: 100%;
+  height: 90%;
+  justify-items: flex-start;
 }
 
 .imageSlider-nav {
@@ -256,7 +261,7 @@ export default {
     margin-bottom: 30px; 
 }
 .carousel-indicators li{
-    width: 78px;
+    width: 3.125vw;
 }
 
 </style>

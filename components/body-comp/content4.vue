@@ -17,8 +17,9 @@
           </div>
       </div>
       <div class="content-under">
-          <div class="content-container" v-for="(content, index) in contents" v-bind:key="index">
+          <div class="content-container">
                 <b-card
+                    v-for="(content, index) in contents" v-bind:key="index"
                     :title="content.headtitle"
                     v-bind:img-src="content.image"
                     style="max-width: 20vw; height: 392px;"
@@ -29,6 +30,10 @@
                     </b-card-text>
                 </b-card>
           </div>
+          <b-button class="content-button" variant="outline-primary">
+              <div><span>Lihat lainnya</span></div>
+              <div class="content-button-img"><img :src="Arrow" /></div>
+            </b-button>
       </div>
   </div>
 </template>
@@ -38,10 +43,12 @@ import PicArt1 from '~/assets/assets/image/article-1.png'
 import PicArt2 from '~/assets/assets/image/article-2.png'
 import PicArt3 from '~/assets/assets/image/article-3.png'
 import PicArt4 from '~/assets/assets/image/article-4.png'
+import Arrow from '~/assets/assets/icon/arrow-right.svg'
+
 export default {
     data() {
         return {
-        PicArt1,PicArt2,PicArt3,PicArt4,
+        PicArt1,PicArt2,PicArt3,PicArt4,Arrow, 
         contents: [
             { image: PicArt2, headtitle: "9+ Tips Belajar Coding Terlengkap untuk Pemula" , date: "Sel, 21 Des 2020", caption: "Inilah yang pasti Anda bingungkan saat mau mempelajari coding dasar. Dunia..." },
             { image: PicArt3, headtitle: "10+ Cara Cek Website Down atau Tidak dengan Mudah..." , date: "Sel, 21 Des 2021", caption: "Anda pasti pernah mengunjungi sebuah website, tapi website tersebut tidak..." },
@@ -132,9 +139,36 @@ hr.dashed {
 
 .content-under{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.content-container{
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 0.9vw;
 }
+
+.content-button{
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-button img{
+    filter: invert(1);
+}
+
+.content-button div{
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+}
+
 </style>
