@@ -1,8 +1,8 @@
 <template>
     <div id="content3">
         <div class="content-titles">
-            <span class="content-title">Aktifitas Sarat Manfaat</span>
-            <span class="content-title-desc">Potret beragam aktifitas sarat manfaat</span>
+            <span class="content-title">Aktivitas Sarat Manfaat</span>
+            <span class="content-title-desc">Potret beragam aktivitas sarat manfaat</span>
         </div>
         <div class="content-card">
             <img :src="ImageBibit" class="content-card-background"/>

@@ -36,9 +36,9 @@ export default {
         return {
             Rumah,Sekolah,Kantor,Hospitality,
             contents2: [
-                { title: "Connecting People Everyday", desc: "Bikin aktifitas selalu seru dan lebih produktif", select: false},
+                { title: "Connecting Peoples Everyday", desc: "Bikin aktifitas selalu seru dan lebih produktif", select: false},
                 { title: "Upgrade Digital Enterprise", desc: "Memfasilitasi kebutuhan digital industri", select:false},
-                { title: "Technology For Humanity", desc: "Membawa masa depan teknologi lebih humanis", select: false},
+                { title: "Technology for Humanity", desc: "Membawa masa depan teknologi lebih humanis", select: false},
                 { title: "Teleporting Happiness", desc: "Berbagi kebahagian lintas jarak dan waktu", select: false},
             ],
             collages: [
