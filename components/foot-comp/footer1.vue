@@ -67,7 +67,7 @@ export default {
 
 .borderline{
     border: 1px solid #EBEBEB;
-    width: 1196px;
+    width: 80%;
 }
 .content-upper{
     display: flex;
@@ -134,5 +134,13 @@ export default {
     line-height: 24px;
     letter-spacing: 0.25px;
     text-align: center;
+}
+
+.social-media{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.6vw;
 }
 </style>

@@ -130,7 +130,7 @@ export default {
   overflow: hidden;
   display: flex;
   align-items: center;
-  box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+  /* box-shadow: 0px 1px 1px rgba(0,0,0,0.1); */
 }
 
 .navbar-logo{
@@ -169,7 +169,6 @@ export default {
 .language-choose{
   background: white;
   color: black;
-  font-weight: bold;
   padding: 2px;
   width: 45px;
   display: flex;

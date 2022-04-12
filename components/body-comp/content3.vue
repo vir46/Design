@@ -43,15 +43,15 @@ export default {
                     desc: "Sebagai salah satu bentuk implementasi visi GMEDIA dengan menerapkan CSV (Corporate Shared Value), GMEDIA membangun sebuah program bibit unggul yang fokus pada pengembangan minat dan bakat talenta muda yang dibimbing sejak dini untuk menjadi talenta unggul muda. Pada program ini kami fokus dalam bidang Teknologi Informasi, olahraga dan seni budaya. Talenta muda yang ikut dalam program ini akan didampingi oleh para profesional di bidangnya masing-masing.",
                 },
                 {
-                    title: "Lorem Ipsum - is a dummy text for testing",
+                    title: "Bibit Unggul - Pengembangan Bakat Talenta Muda Indonesia",
                     desc: "Sebagai salah satu bentuk implementasi visi GMEDIA dengan menerapkan CSV (Corporate Shared Value), GMEDIA membangun sebuah program bibit unggul yang fokus pada pengembangan minat dan bakat talenta muda yang dibimbing sejak dini untuk menjadi talenta unggul muda. Pada program ini kami fokus dalam bidang Teknologi Informasi, olahraga dan seni budaya. Talenta muda yang ikut dalam program ini akan didampingi oleh para profesional di bidangnya masing-masing.",
                 },
                 {
-                    title: "Lorem more,,, Same lorem, nothing different,, writed for the carousel test",
+                    title: "Bibit Unggul - Pengembangan Bakat Talenta Muda Indonesia",
                     desc: "Sebagai salah satu bentuk implementasi visi GMEDIA dengan menerapkan CSV (Corporate Shared Value), GMEDIA membangun sebuah program bibit unggul yang fokus pada pengembangan minat dan bakat talenta muda yang dibimbing sejak dini untuk menjadi talenta unggul muda. Pada program ini kami fokus dalam bidang Teknologi Informasi, olahraga dan seni budaya. Talenta muda yang ikut dalam program ini akan didampingi oleh para profesional di bidangnya masing-masing.",
                 },
                 {
-                    title: "The Last Part of Carousel",
+                    title: "Bibit Unggul - Pengembangan Bakat Talenta Muda Indonesia",
                     desc: "Sebagai salah satu bentuk implementasi visi GMEDIA dengan menerapkan CSV (Corporate Shared Value), GMEDIA membangun sebuah program bibit unggul yang fokus pada pengembangan minat dan bakat talenta muda yang dibimbing sejak dini untuk menjadi talenta unggul muda. Pada program ini kami fokus dalam bidang Teknologi Informasi, olahraga dan seni budaya. Talenta muda yang ikut dalam program ini akan didampingi oleh para profesional di bidangnya masing-masing.",
                 },
             ],
@@ -190,8 +190,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   background: #02539E;
   opacity: 0.6; 
   color: #4DB6AC;
@@ -242,6 +242,10 @@ export default {
   height: 100%;
   object-fit: cover;
   object-position: 50% 50%;
+}
+
+.imageSlider-nav a img{
+    width: 50%;
 }
 
 .fade-enter-active,

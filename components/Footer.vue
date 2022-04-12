@@ -89,7 +89,8 @@ div#footer{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 10vw;
     padding-top: 50px;
     flex-direction: row;
 }

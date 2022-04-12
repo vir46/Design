@@ -69,7 +69,7 @@ export default {
 hr.dashed {
   border: 1px solid #EBEBEB;
   opacity: 0.5;
-  width: 60%;
+  width: 65%;
 }
 
 .content-container{
@@ -81,7 +81,7 @@ hr.dashed {
 }
 
 .content-image{
-    border-radius: 25px;
+    border-radius: 8px;
     width: 572px;
     height: 343px;
 }

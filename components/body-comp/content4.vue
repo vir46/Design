@@ -33,7 +33,7 @@
           </div>
           <b-button class="content-button" variant="outline-primary">
               <div><span>Lihat lainnya</span></div>
-              <div class="content-button-img"><img :src="Arrow" /></div>
+              <div class="arrow-logo"></div>
             </b-button>
       </div>
   </div>
@@ -173,10 +173,16 @@ hr.dashed {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid #02539E;
+    color: #02539E;
 }
 
-.content-button img{
-    filter: invert(1);
+.content-button:hover .arrow-logo{
+    background-color: white;
+}
+
+.content-button:hover{
+    color: white;
 }
 
 .content-button div{
@@ -185,4 +191,11 @@ hr.dashed {
     justify-content: flex-end;
 }
 
+.arrow-logo{
+    background-color: #02539E;
+    mask: url('~/assets/assets/icon/arrow-right.svg') no-repeat right;
+    width: 1px;
+    height: 14px;
+    justify-items: flex-end;
+}
 </style>

@@ -71,7 +71,7 @@ export default {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 10vw;
+    gap: 2vw;
 }
 .content-menu{
     height: 532px;
@@ -89,7 +89,9 @@ export default {
 
 .content-menu-item > div{
     display: flex;
-    width: 27vw;
+    /* width max-content + 1px */
+    width: 22vw;
+
     flex-direction: column;
     justify-content: center;
     color: #1f1f1f;
@@ -146,6 +148,9 @@ export default {
 /* div first child */
 .selected > div{
     background-color: #EFEFEF;
+    padding: 5px 40px 5px 15px;
+    border-radius: 8px;
+    width: max-content;
 }
 
 .selected > div > span:first-child{
@@ -154,11 +159,13 @@ export default {
 
 .selected::before{
     content: "";
-    width: 5px;
-    height: 60px;
+    width: 4px;
+    height: 50px;
+    border-radius: 2px;
     background-color: #02539E;
     position: relative;
-    margin-right: 0.2vw;
+    /* margin-right: 2px; */
+    align-self: center;
 }
 
 /* .hovered{
