@@ -9,11 +9,14 @@
             <span v-for="(link, index) in content" :key="index" @click="turnOnDropdown(index)">{{link.text}}<img :class="{'reverse': index == indexDropdown && isDropdown == true}"
              :src="Chevrondown"/></span>
           </div>
-          <div class="switch">
-            <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
-            <label class="language-label" for="language-toggle"></label>
-            <span class="on">ID</span>
-            <span class="off">EN</span>
+          <div class="language-switch">
+            <div class="language-choose" 
+            v-for="(lang, index) in language" :key="index"
+            :class="{'langchoose': lang.active == true}"
+            @click="changeLanguage(index)"
+            >
+            {{lang.text}}
+            </div>
           </div>
           <div class="button-login">
             <a href="#">Login</a>
@@ -48,6 +51,10 @@ export default {
         { text: 'Perusahaan', dropdown: [{ text: 'Perusahaan 1' }, { text: 'Perusahaan 2' }] },
         { text: 'Informasi', dropdown: [{ text: 'Informasi 1' }, { text: 'Informasi 2' }] },
       ],
+      language: [
+        { text: 'ID', active: true, },
+        { text: 'EN', active: false, },
+      ],
       indexDropdown: 0,
       isDropdown: false,
     }
@@ -65,6 +72,12 @@ export default {
           this.indexDropdown = index;
         }
       }
+    },
+    changeLanguage(index) {
+      this.language.forEach(lang => {
+        lang.active = false;
+      });
+      this.language[index].active = true;
     },
   },
 }
@@ -149,99 +162,33 @@ export default {
   user-select: none;
 }
 
-/* Switch CSS */
-
-.switch {
-  position: relative;
-  display: inline-block;
-  margin: 0 5px 0 0;
+.content-link img{
+  margin-left: 0.5vw;
 }
 
-.switch > span {
-  position: absolute;
-  top: 10px;
-  pointer-events: none;
-  font-family: 'Helvetica', Arial, sans-serif;
+.language-choose{
+  background: white;
+  color: black;
   font-weight: bold;
-  font-size: 12px;
-  text-transform: uppercase;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, .06);
-  width: 50%;
-  text-align: center;
-}
-
-input.check-toggle-round-flat:checked ~ .off {
-  color: #02539E;
-}
-
-input.check-toggle-round-flat:checked ~ .on {
-  color: #fff;
-}
-
-.switch > span.on {
-  left: 0;
-  padding-left: 2px;
-  color: #02539E;
-}
-
-.switch > span.off {
-  right: 0;
-  padding-right: 4px;
-  color: #fff;
-}
-
-.check-toggle {
-  position: absolute;
-  margin-left: -9999px;
-  visibility: hidden;
-}
-.check-toggle + label {
-  display: block;
-  position: relative;
-  cursor: pointer;
-  outline: none;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-input.check-toggle-round-flat + label {
   padding: 2px;
-  width: 97px;
-  height: 35px;
-  background-color: #02539E;
-  -webkit-border-radius: 60px;
-  border-radius: 60px;
-}
-input.check-toggle-round-flat + label:before, input.check-toggle-round-flat + label:after {
-  display: block;
-  position: absolute;
-  content: "";
+  width: 45px;
+  display: flex;
+  justify-content: center;
 }
 
-input.check-toggle-round-flat + label:before {
-  top: 2px;
-  left: 2px;
-  bottom: 2px;
-  right: 2px;
-  background-color: #02539E;
-  -webkit-border-radius: 60px;
-  border-radius: 60px;
-}
-input.check-toggle-round-flat + label:after {
-  top: 4px;
-  left: 4px;
-  bottom: 4px;
-  width: 48px;
-  background-color: #fff;
-  -webkit-border-radius: 52px;
-  border-radius: 52px;
-  -webkit-transition: margin 0.2s;
-  transition: margin 0.2s;
+.language-switch{
+  display: flex;
+  flex-direction: row;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #EBEBEB;
 }
 
-input.check-toggle-round-flat:checked + label:after {
-  margin-left: 44px;
+.langchoose{
+  background: #02539E !important;
+  color: white !important;
 }
+
 
 /*  Button CSS */
 

@@ -141,6 +141,7 @@ export default {
     font-weight: 700;
     font-size: 20px;
     color: #ffffff;
+    margin-bottom: 15px;
 }
 /* div first child */
 .selected > div{
