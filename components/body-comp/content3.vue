@@ -20,7 +20,9 @@
                         </div>
                     </transition-group>
                     <ol class="carousel-indicators">
-                        <li v-for="(content, index) in CarAct" :key="index" @click="goToSlide(index)" :class="{active: index === currentNumber}"></li>
+                        <li v-for="(content, index) in CarAct" :key="index" @click="goToSlide(index)" :class="{active: index === currentNumber}">
+                            <span></span>
+                        </li>
                     </ol>
                 </div>
             </div>
@@ -131,6 +133,8 @@ export default {
     line-height: 28px;
     letter-spacing: 0.15000000596046448px;
     text-align: center;
+    letter-spacing: 0.15px;
+    color: #8a8a8a;
 }
 
 .content-card{
@@ -156,9 +160,15 @@ export default {
 
 .carousel-button{
     width: max-content;
-    margin: 0 0 10px 0;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px;
+    font-size: 14px;
 }
 
+.carousel-button:hover{
+    color: #000;
+}
 
 .timer {
   position: absolute;
@@ -180,7 +190,7 @@ export default {
   bottom: 0;
   right: 0;
   display: flex;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px 0 0 0;
   overflow: hidden;
   z-index: 9;
 }
@@ -267,8 +277,36 @@ export default {
     margin: 0 0 20px 3.5vw;
     justify-content: flex-start;
 }
+
 .carousel-indicators li{
-    width: 3.125vw;
+    width: 78px;
+    position: relative;
+}
+
+.active{
+    background-color: grey;
+}
+
+.active span {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 78px;
+  height: 5px;
+  border-radius: 3px;
+  z-index: 100;
+  background: white;
+  animation: loadingbar 7s ease-in;
+}
+
+@keyframes loadingbar {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
 }
 
 </style>

@@ -51,9 +51,9 @@ export default {
         return {
         PicArt1,PicArt2,PicArt3,PicArt4,Arrow, 
         contents: [
-            { image: PicArt2, headtitle: "9+ Tips Belajar Coding Terlengkap untuk Pemula" , date: "Sel, 21 Des 2020", caption: "Inilah yang pasti Anda bingungkan saat mau mempelajari coding dasar. Dunia..." },
+            { image: PicArt2, headtitle: "9+ Tips Belajar Coding Terlengkap untuk Pemula" , date: "Sel, 21 Des 2021 ", caption: "Inilah yang pasti Anda bingungkan saat mau mempelajari coding dasar. Dunia..." },
             { image: PicArt3, headtitle: "10+ Cara Cek Website Down atau Tidak dengan Mudah..." , date: "Sel, 21 Des 2021", caption: "Anda pasti pernah mengunjungi sebuah website, tapi website tersebut tidak..." },
-            { image: PicArt4, headtitle: "Corporate Shared Value", date: "Sel, 21 Des 2021", caption: "Coorporate Shared Value adalah bentuk bisnis yang mengedepankan nilai dan kebermanfaatan dalam..." },
+            { image: PicArt4, headtitle: "Coorporate Shared Value", date: "Sel, 21 Des 2021", caption: "Coorporate Shared Value adalah bentuk bisnis yang mengedepankan nilai dan kebermanfaatan dalam..." },
         ],
         }
     }
@@ -88,6 +88,8 @@ export default {
     line-height: 28px;
     letter-spacing: 0.15000000596046448px;
     text-align: center;
+    color: #8a8a8a;
+    letter-spacing: 0.15px;
 }
 
 hr.dashed {
@@ -115,7 +117,9 @@ hr.dashed {
 }
 
 .b-card{
-    box-shadow: 4px 4px 8px 0px #02539E0F;
+    box-shadow: 4px 4px 8px 0px #02539E0F;font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
 }
 
 .content-title{
@@ -132,6 +136,7 @@ hr.dashed {
     line-height: 20px;
     letter-spacing: 0.15000000596046448px;
     text-align: left;
+    color: #616161;
 }
 
 .content-desc{
@@ -188,6 +193,7 @@ hr.dashed {
 .content-button div{
     display: flex;
     width: 50%;
+    letter-spacing: 1.25px;
     justify-content: flex-end;
 }
 

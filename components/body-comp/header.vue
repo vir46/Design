@@ -22,7 +22,9 @@
                     </div>
                 </transition-group>
                 <ol class="carousel-indicators">
-                    <li v-for="(image, index) in images" :key="index" @click="goToSlide(index)" :class="{active: index === currentNumber}"></li>
+                    <li v-for="(image, index) in images" :key="index" @click="goToSlide(index)" :class="{active: index === currentNumber}">
+                        <span></span>
+                    </li>
                 </ol>
             </div>
         </div>
@@ -180,7 +182,7 @@ export default {
   bottom: 0;
   right: 0;
   display: flex;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px 0 0 0;
   overflow: hidden;
   z-index: 9;
 }
@@ -252,6 +254,8 @@ export default {
 .uc-text{
     font-size: 20px;
     color: white;
+    letter-spacing: 0.15px;
+    font-weight: 400;
 }
 
 .uc-icon{
@@ -265,5 +269,32 @@ export default {
 }
 .carousel-indicators li{
     width: 78px;
+    position: relative;
+}
+
+.active{
+    background-color: grey;
+}
+
+.active span {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 78px;
+  height: 5px;
+  border-radius: 3px;
+  z-index: 100;
+  background: white;
+  animation: loadingbar 7s ease-in;
+}
+
+@keyframes loadingbar {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
 }
 </style>

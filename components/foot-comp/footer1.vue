@@ -72,10 +72,11 @@ export default {
 .content-upper{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     height: 150px;
     width: 70%;
+    gap: 10vw;
 }
 
 .content-upper-logo{
@@ -101,8 +102,9 @@ export default {
     font-size: 16px;
     font-weight: 700;
     line-height: 20px;
-    letter-spacing: 0.15000000596046448px;
+    letter-spacing: 0.15px;
     text-align: left;
+    color: #616161;
 }
 
 .content-town{

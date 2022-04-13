@@ -53,7 +53,7 @@ export default {
       ],
       language: [
         { text: 'ID', active: true, },
-        { text: 'EN', active: false, },
+        { text: 'ENG', active: false, },
       ],
       indexDropdown: 0,
       isDropdown: false,
@@ -156,8 +156,7 @@ export default {
 
 .content-link{
   display: flex;
-  gap: 4vw;
-  margin-right: 2vw;
+  gap: 1.5vw;
   cursor: pointer;
   user-select: none;
 }
@@ -168,17 +167,20 @@ export default {
 
 .language-choose{
   background: white;
+  font-size: 12px;
   color: black;
   padding: 2px;
-  width: 45px;
+  width: 35px;
+  height: 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .language-switch{
   display: flex;
   flex-direction: row;
-  border-radius: 15px;
+  border-radius: 8px;
   overflow: hidden;
   border: 1px solid #EBEBEB;
 }

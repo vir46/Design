@@ -106,6 +106,7 @@ export default {
 .content-desc{
     font-size: 16px;
     font-weight: 400;
+    letter-spacing: 0.5px;
     width: max-content;
 }
 
@@ -135,7 +136,7 @@ export default {
     position: relative;
     width: 360px;
     height: 266px;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 .content-caption{

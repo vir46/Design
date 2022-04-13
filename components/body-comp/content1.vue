@@ -106,6 +106,12 @@ hr.dashed {
 }
 
 .content-button{
-    width: 150px;
+    width: max-content;
+    border: 1px solid #02539E;
+    color: #02539E;
+    padding: 10px;
+}
+.content-button:hover{
+    color: white;
 }
 </style>
