@@ -1,8 +1,7 @@
 <template>
   <div id="footer">
       <div class="link-container">
-          <div v-for="(link, index) in links" v-bind:key="index">
-              <div class="link-content">
+              <div class="link-content" v-for="(link, index) in links" v-bind:key="index">
                   <span class="link-title">{{ link.name }}</span>
                   <div class="link-link"> 
                       <a v-for="(ct, index) in link.content" 
@@ -12,9 +11,11 @@
                        </a>
                   </div>
               </div>
-          </div>
       </div>
       <Footerone/>
+      <div class="content-copyright">
+          <span>© 2022 PT Media Sarana Data. All rights reserved.</span>
+      </div>
   </div>
 </template>
 
@@ -84,16 +85,20 @@ div#footer{
     height: max-content;
     background: #F5F5F5;
     margin: 20px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 }
 .link-container{
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
-    gap: 10vw;
+    width:  1594.6752px;
     padding-top: 50px;
     flex-direction: row;
+    justify-content: space-between;
 }
+
 .link-title{
     font-size: 16px;
     font-weight: 700;
@@ -115,5 +120,23 @@ div#footer{
 .link-link{
     display: flex;
     flex-direction: column;
+}
+
+
+.content-copyright{
+    background: #F0F0F0;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.content-copyright > span{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.25px;
+    text-align: center;
 }
 </style>

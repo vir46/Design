@@ -65,7 +65,7 @@ export default {
 
 <style scoped>
 .content-container{
-    height: 660px;
+    height:  879px;
     background-color: #f5f5f5;
     display: flex;
     flex-direction: row;
@@ -74,7 +74,7 @@ export default {
     gap: 2vw;
 }
 .content-menu{
-    height: 532px;
+    height: 708px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -98,20 +98,20 @@ export default {
 }
 
 .content-title{
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 700;
     width: max-content;
 }
 
 .content-desc{
-    font-size: 16px;
+    font-size: 21px;
     font-weight: 400;
     letter-spacing: 0.5px;
     width: max-content;
 }
 
 .content-collage-image{
-    width: 720px;
+    width: 960px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -134,15 +134,15 @@ export default {
 
 .content-image{
     position: relative;
-    width: 360px;
-    height: 266px;
+    width: 480px;
+    height: 354px;
     opacity: 0.8;
 }
 
 .content-caption{
     position: absolute;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 26px;
     color: #ffffff;
     margin-bottom: 15px;
 }
@@ -151,7 +151,7 @@ export default {
     background-color: #EFEFEF;
     padding: 5px 40px 5px 15px;
     border-radius: 8px;
-    width: max-content;
+    width:  591px;
 }
 
 .selected > div > span:first-child{

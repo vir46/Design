@@ -23,7 +23,7 @@
                     :title="content.headtitle"
                     class="b-card"
                     v-bind:img-src="content.image"
-                    style="max-width: 20vw; height: 392px;"
+                    style="max-width: 510px; max-height: 522px;"
                 >
                     <span class="content-date">{{content.date}}</span>
                     <b-card-text class="content-desc">
@@ -71,11 +71,12 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: column;
-
+    gap: 10px;
+    margin: 15px 0 15px 0;
 }
 
 .content-maintitle{
-    font-size: 34px;
+    font-size: 45px;
     font-weight: 700;
     line-height: 41px;
     letter-spacing: 0.25px;
@@ -83,7 +84,7 @@ export default {
 }
 
 .content-subtitle{
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 400;
     line-height: 28px;
     letter-spacing: 0.15000000596046448px;
@@ -95,35 +96,34 @@ export default {
 hr.dashed {
   border: 1px solid #EBEBEB;
   opacity: 0.5;
-  width: 60%;
+  width: 82%;
 }
 
 .content-head-image{
-    width: 31.313vw;
+    width: 776px;
     height: 100%;
 }
 
 .content-head{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
     overflow: hidden;
     border-radius: 8px;
-    width: 62.292vw;
-    gap: 2vw;
+    width: 83.056vw;;
     margin: 20px 0 20px 0;
     box-shadow: 4px 4px 8px 0px #02539E0F;
 }
 
 .b-card{
     box-shadow: 4px 4px 8px 0px #02539E0F;font-weight: 600;
-    font-size: 20px;
+    font-size: 63px;
     line-height: 24px;
 }
 
 .content-title{
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 600;
     line-height: 24px;
     letter-spacing: 0em;
@@ -131,7 +131,7 @@ hr.dashed {
 }
 
 .content-date{
-    font-size: 16px;
+    font-size: 21px;
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0.15000000596046448px;
@@ -140,9 +140,10 @@ hr.dashed {
 }
 
 .content-desc{
-    font-size: 16px;
+    font-size: 21px;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 37px;
+    margin-top: 20px;
     letter-spacing: 0.5px;
     text-align: justify;
 }
@@ -151,8 +152,8 @@ hr.dashed {
     display: flex;
     align-items: left;
     flex-direction: column;
-    width: 29.896vw;
-    gap: 10px;
+    width: 765px;
+    gap: 30px;
     padding: 20px;
 }
 
@@ -168,13 +169,14 @@ hr.dashed {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: 0.9vw;
+    justify-content: space-between;
+    width: 1594.6752px;
 }
 
 .content-button{
     margin: 30px 0 30px 0;
     width: 100%;
+    height: 49px;
     display: flex;
     justify-content: center;
     align-items: center;

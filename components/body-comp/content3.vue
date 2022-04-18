@@ -113,6 +113,8 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 10px;
+    margin: 15px 0 15px 0;
 }
 
 .content-titles > span{
@@ -120,7 +122,7 @@ export default {
 }
 
 .content-title{
-    font-size: 34px;
+    font-size: 45px;
     font-weight: 700;
     line-height: 41px;
     letter-spacing: 0.25px;
@@ -128,7 +130,7 @@ export default {
 }
 
 .content-title-desc{
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 400;
     line-height: 28px;
     letter-spacing: 0.15000000596046448px;
@@ -138,8 +140,8 @@ export default {
 }
 
 .content-card{
-    height: 514px;
-    width: 1196px;
+    height: 685px;
+    width: 1594px;
     margin: 20px 0 20px 0;
     border-radius: 8px;
     position: relative;
@@ -158,12 +160,24 @@ export default {
     opacity: 0.7;
 }
 
+.content-button{
+    font-size: 18px;
+    width: 170px;
+    height: 63px;
+    border-radius: 8px;
+    border: 1px solid #02539E;
+    color: #02539E;
+    padding: 10px;
+}
+
 .carousel-button{
-    width: max-content;
+    font-size: 18px;
+    width: 170px;
+    height: 63px;
+    border-radius: 8px;
     border: 1px solid #fff;
     color: #fff;
     padding: 10px;
-    font-size: 14px;
 }
 
 .carousel-button:hover{
@@ -230,7 +244,7 @@ export default {
 }
 
 .imageSlider-wrapper span{    
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 700;
     line-height: 32px;
     letter-spacing: 0em;
@@ -238,9 +252,9 @@ export default {
 }
 
 .imageSlider-wrapper p {
-    font-size: 16px;
+    font-size: 21px;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 38px;
     letter-spacing: 0.5px;
     text-align: left;
 }
@@ -308,5 +322,7 @@ export default {
         width: 100%;
     }
 }
+
+
 
 </style>

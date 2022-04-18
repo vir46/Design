@@ -29,7 +29,9 @@
             </div>
         </div>
         <div class="under-carousel-menu">
-            <span class="uc-text" v-for="(uc, index) in undercarousel" v-bind:key="'B'+ index"><img class="uc-icon" v-bind:src="uc.icon"/>{{ uc.name }}</span>
+            <div>
+                <span class="uc-text" v-for="(uc, index) in undercarousel" v-bind:key="'B'+ index"><img class="uc-icon" v-bind:src="uc.icon"/>{{ uc.name }}</span>
+            </div>
         </div>
     </div>
 </template>
@@ -248,7 +250,12 @@ export default {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 10%;
+}
+
+.under-carousel-menu div{
+    width:  1594.6752px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .uc-text{

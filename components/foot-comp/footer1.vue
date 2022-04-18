@@ -3,6 +3,7 @@
       <hr class="borderline">
       <div class="content-upper">
           <div>
+              <div>
               <img  class="content-upper-logo" :src="Logo"/>
           </div>
           <div class="content-upper-contact">
@@ -19,6 +20,7 @@
                     <a href="#"><img :src="Twitter"/></a>
                 </div>
           </div>
+          </div>
       </div>
       <hr class="borderline">
       <div class="content-town" >
@@ -26,9 +28,6 @@
                 {{town.name}}
                 <div v-if="index < towns.length - 1">.</div>
           </div>
-      </div>
-      <div class="content-copyright">
-          <span>© 2022 PT Media Sarana Data. All rights reserved.</span>
       </div>
   </div>
 </template>
@@ -72,13 +71,18 @@ export default {
 .content-upper{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 150px;
-    width: 70%;
-    gap: 10vw;
+    width:  1594.6752px;
 }
 
+.content-upper > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+}
 .content-upper-logo{
     width: 9.1vw;
 }
@@ -121,21 +125,6 @@ export default {
     flex-direction: row;
     justify-content: center;
     gap: 1vw;
-}
-.content-copyright{
-    background: #F0F0F0;
-    height: 44px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.content-copyright > span{
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.25px;
-    text-align: center;
 }
 
 .social-media{

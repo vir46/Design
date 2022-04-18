@@ -1,9 +1,6 @@
 <template>
     <div id="contentone">
-        <div 
-        data-aos="fade-up"
-        data-aos-duration="1500"
-        v-for="(content, index) in contents" v-bind:key="index">
+        <div v-for="(content, index) in contents" v-bind:key="index" class="content-all">
             <div class="content-container" v-if="content.queue == 'normal'">
                 <img class="content-image" :src="content.imageurl"/>
                 <div class="content-text">
@@ -12,10 +9,7 @@
                     <b-button class="content-button" variant="outline-primary">Selengkapnya</b-button>
                 </div>
             </div>
-            <div 
-            data-aos="fade-up"
-            data-aos-duration="1500"
-            class="content-container" v-else>
+            <div class="content-container" v-else>
                 <div class="content-text">
                     <span class="content-title">{{content.title}}</span>
                     <span class="content-desc">{{content.desc}}</span>
@@ -69,21 +63,26 @@ export default {
 hr.dashed {
   border: 1px solid #EBEBEB;
   opacity: 0.5;
-  width: 65%;
+  width: 76%;
+}
+
+.content-all{
+    display: flex;
+    justify-content: center;
 }
 
 .content-container{
     margin: 50px 40px 100px 40px;
     display: flex;
+    width:  1594.6752px;
     align-items: center;
-    justify-content: center;
-    gap: 5vw;
+    justify-content: space-between;
 }
 
 .content-image{
     border-radius: 8px;
-    width: 572px;
-    height: 343px;
+    width: 762px;
+    height: 457px;
 }
 
 .content-text{
@@ -97,19 +96,23 @@ hr.dashed {
 .content-desc{
     text-align: justify;
     width: 572px;
-    font-size: 16px;
+    font-size: 21px;
 }
 
 .content-title{
     font-weight: 700;
-    font-size: 24px;
+    font-size: 32px;
 }
 
 .content-button{
-    width: max-content;
+    font-size: 18px;
+    width: 170px;
+    height: 63px;
+    border-radius: 8px;
     border: 1px solid #02539E;
     color: #02539E;
     padding: 10px;
+    letter-spacing: 1.25px;
 }
 .content-button:hover{
     color: white;
