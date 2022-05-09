@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="footer">
       <hr class="borderline">
       <div class="content-upper">
           <div>
@@ -64,6 +64,9 @@ export default {
 
 <style scoped>
 
+#footer{
+    display: flex;
+}
 .borderline{
     border: 1px solid #EBEBEB;
     width: 80%;
@@ -74,7 +77,7 @@ export default {
     justify-content: flex-start;
     align-items: center;
     height: 150px;
-    width:  1594.6752px;
+    width:  83.622vw;
 }
 
 .content-upper > div{
@@ -84,7 +87,7 @@ export default {
     width: 70%;
 }
 .content-upper-logo{
-    width: 9.1vw;
+    width: 174px;
 }
 
 .content-upper-contact{
@@ -116,7 +119,8 @@ export default {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 20px;
+    height: max-content;
+    width: 45.621vw;
     gap: 1vw;
     margin-bottom: 15px;
 }
@@ -130,8 +134,32 @@ export default {
 .social-media{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    gap: 0.6vw;
+}
+
+@media screen and (max-width:829px) {
+    .content-town{
+        width: 100%;
+        flex-wrap: wrap;
+    }   
+}
+@media screen and (max-width: 999px) {
+    .link-container{
+        width:  83.622vw;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 80px;
+    }
+    .content-upper{      
+        height: max-content;
+        width:  83.622vw;
+    }
+    .content-upper > div{
+        gap: 40px;
+        flex-wrap: wrap;
+        width: 70%;
+    }
 }
 </style>

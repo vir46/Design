@@ -93,7 +93,7 @@ div#footer{
 .link-container{
     display: flex;
     justify-content: center;
-    width:  1594.6752px;
+    width:  83.622vw;
     padding-top: 50px;
     flex-direction: row;
     justify-content: space-between;
@@ -138,5 +138,15 @@ div#footer{
     line-height: 24px;
     letter-spacing: 0.25px;
     text-align: center;
+}
+
+@media screen and (max-width: 999px) {
+    .link-container{
+        width:  83.622vw;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 80px;
+    }
 }
 </style>

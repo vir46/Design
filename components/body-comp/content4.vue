@@ -20,11 +20,11 @@
           <div class="content-container">
                 <b-card
                     v-for="(content, index) in contents" v-bind:key="index"
-                    :title="content.headtitle"
                     class="b-card"
                     v-bind:img-src="content.image"
-                    style="max-width: 510px; max-height: 522px;"
+                    
                 >
+                    <span class="card-title">{{content.headtitle}}</span>
                     <span class="content-date">{{content.date}}</span>
                     <b-card-text class="content-desc">
                     {{content.caption}}
@@ -71,7 +71,7 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     margin: 15px 0 15px 0;
 }
 
@@ -84,7 +84,7 @@ export default {
 }
 
 .content-subtitle{
-    font-size: 26px;
+    font-size: 29px;
     font-weight: 400;
     line-height: 28px;
     letter-spacing: 0.15000000596046448px;
@@ -100,61 +100,65 @@ hr.dashed {
 }
 
 .content-head-image{
-    width: 776px;
+    width: 43.111vw;
     height: 100%;
 }
 
 .content-head{
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     overflow: hidden;
     border-radius: 8px;
-    width: 83.056vw;;
+    width: 83.056vw;
     margin: 20px 0 20px 0;
     box-shadow: 4px 4px 8px 0px #02539E0F;
 }
 
 .b-card{
     box-shadow: 4px 4px 8px 0px #02539E0F;font-weight: 600;
-    font-size: 63px;
-    line-height: 24px;
+    width: 27vw; 
+    height: max-content;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    min-height: 222px;
 }
 
 .content-title{
-    font-size: 26px;
+    font-size: 1.529vw;
     font-weight: 600;
-    line-height: 24px;
-    letter-spacing: 0em;
+    line-height: 1.412vw;
     text-align: left;
 }
 
 .content-date{
-    font-size: 21px;
+    font-size: 1.235vw;
     font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0.15000000596046448px;
+    line-height: 1vw;
     text-align: left;
     color: #616161;
 }
 
 .content-desc{
-    font-size: 21px;
+    font-size: 1.235vw;
     font-weight: 400;
-    line-height: 37px;
-    margin-top: 20px;
-    letter-spacing: 0.5px;
+    line-height: 2.176vw;
     text-align: justify;
 }
 
 .content-info{
     display: flex;
-    align-items: left;
+    align-items: flex-start;
     flex-direction: column;
-    width: 765px;
-    gap: 30px;
-    padding: 20px;
+    width: 38.094vw;
+    gap: 0.882vw;
+    height: 100%;
+    padding: 0 20px 0 20px;
 }
 
 .content-under{
@@ -170,7 +174,7 @@ hr.dashed {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 1594.6752px;
+    width: 83.021vw;
 }
 
 .content-button{
@@ -199,11 +203,79 @@ hr.dashed {
     justify-content: flex-end;
 }
 
+.card-title{
+    font-size: 1.235vw;
+    font-weight: 600;
+    line-height: 1.412vw;
+    text-align: left;
+    color: black;
+}
+
 .arrow-logo{
     background-color: #02539E;
     mask: url('~/assets/assets/icon/arrow-right.svg') no-repeat right;
     width: 1px;
     height: 14px;
     justify-items: flex-end;
+}
+
+@media screen and (max-width: 699px) {    
+    .content-head-image{
+        width: 100%;
+    }
+
+    .content-head{
+        flex-direction: column;
+    }
+        
+    .content-title{
+        font-size: 3.058vw;
+        line-height: 2.824vw;
+    }
+
+    .content-date{
+        font-size: 2.470vw;
+        line-height: 2vw;
+    }
+
+    .content-desc{
+        font-size: 2.470vw;
+        line-height: 4.352vw;
+    }
+
+    .content-info{
+        width: 100%;
+        gap: 1.882vw;
+        height: max-content;
+        padding: 2.5vw;
+    }
+    .content-container{
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .b-card{
+        width: 100%; 
+        max-height: max-content;
+    }
+
+    
+    .b-card .card-body{
+        height: max-content;
+    }
+
+    
+    .card-title{
+        font-size: 2.470vw;
+        line-height: 2.824vw;
+    }
+    .content-maintitle{
+        font-size: 24px;
+    }
+
+    .content-subtitle{
+        font-size: 18px;
+    }
+
 }
 </style>

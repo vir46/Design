@@ -17,9 +17,7 @@
                 </div>
                 <img class="content-image" :src="content.imageurl"/>
             </div>
-            <div v-if="index < contents.length - 1">
-                <hr class="dashed">
-            </div>
+            <hr class="dashed" v-if="index < contents.length - 1">
         </div>
     </div>
 </template>
@@ -59,30 +57,33 @@ export default {
 
 <style scoped>
 
-
-hr.dashed {
+hr.dashed  {
   border: 1px solid #EBEBEB;
   opacity: 0.5;
-  width: 76%;
+  width: 76vw;
 }
+
 
 .content-all{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .content-container{
     margin: 50px 40px 100px 40px;
     display: flex;
-    width:  1594.6752px;
+    width:  83.056vw;
     align-items: center;
     justify-content: space-between;
 }
 
 .content-image{
     border-radius: 8px;
-    width: 762px;
-    height: 457px;
+    width: 39.688vw;
+    height: 100%;
+    /* height: 23.7917vw; */
 }
 
 .content-text{
@@ -116,5 +117,66 @@ hr.dashed {
 }
 .content-button:hover{
     color: white;
+}
+
+@media screen and (max-width: 1399px) {
+    .content-text{
+        width: 45%;
+    }
+    span.content-desc{
+        width: 100%;
+    }
+    .content-button{
+        font-size: 12px;
+        width: 140px;
+        height: 43px;
+    }
+    .content-title{
+        font-size: 22px;
+    }
+    .content-desc{
+        font-size: 15px;
+        width: 29.792vw;
+        text-align: justify;
+    }
+}
+
+@media screen and (max-width:899px) {
+    .content-title{
+        font-size: 17px;
+    }
+}
+
+
+/* @media screen and (max-width: 659px) { */
+@media screen and (max-width: 776px) {
+    .content-image{
+        width: 70%;
+        height: auto;
+    }
+    .content-title{
+        font-size: 22px;
+        text-align: center;
+    }
+    .content-desc{
+        font-size: 15px;
+        width: 50vw;
+        text-align: justify;
+    } 
+    .content-text{
+        width: 70%;
+        align-items: center;
+    }
+    .content-container{
+        width:  83.056vw;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .content-button{
+        width: max-content;
+        /* align-self: flex-start; */
+        padding: 0 20px 0 20px ;
+    }
 }
 </style>

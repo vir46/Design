@@ -25,8 +25,5 @@ export default {
         Contentthree,
         Contentfour,
     },
-    mounted() {
-        AOS.init();
-    }
 }
 </script>

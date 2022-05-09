@@ -30,7 +30,9 @@
         </div>
         <div class="under-carousel-menu">
             <div>
-                <span class="uc-text" v-for="(uc, index) in undercarousel" v-bind:key="'B'+ index"><img class="uc-icon" v-bind:src="uc.icon"/>{{ uc.name }}</span>
+                <div v-for="(uc, index) in undercarousel" v-bind:key="index">
+                    <span class="uc-text"><img class="uc-icon" v-bind:src="uc.icon"/>{{ uc.name }}</span>
+                </div>
             </div>
         </div>
     </div>
@@ -124,12 +126,14 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-start;
     z-index: -1;
     overflow: hidden;
 }
 
 .Head-Title-Text{
     height: 250px;
+    width: max-content;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -139,32 +143,30 @@ export default {
 
 .background-right{
     position: relative;
-    right: -2vw;
-    display: block;
+    right: 0;
     background-size: cover;
     background-color: white;
-    width: 40%;
-    background-size: cover;
+    width: 47%;
+    background-size: contain;
 }
 .background-left{
     position: relative;
-    display: block;
-    -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
-    left: -2vw;
-    width: 40%;
-    background-size: cover;
+    left: 0;
+    width: 47%;
+    background-size: contain;
     background-color: white;
-    background-size: cover;
 }
 
 .Title{
     font-size: 48px;
     font-weight: 700;
+    text-align: center;
 }
 .Desc{
     font-size: 20px;
     font-weight: 400;
+    text-align: center;
 }
 
 .timer {
@@ -194,18 +196,23 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 90px;
-  height: 90px;
+  width: 4.688vw;
+  height: 4.688vw;
   background: #02539E;
   opacity: 0.6; 
   color: #4DB6AC;
   cursor: pointer;
 }
 
+.imageSlider .imageSlider-nav img{
+    width: 4.688vw;
+}
 .imageSlider .imageSlider-nav .next:hover,
 .imageSlider .imageSlider-nav .prev:hover {
   background-color: rgba(255, 255, 255, 0.8);
 }
+
+
 
 .imageSlider .imageSlider-nav .prev {
   margin-right: 1px;
@@ -252,10 +259,19 @@ export default {
     justify-content: center;
 }
 
-.under-carousel-menu div{
-    width:  1594.6752px;
+.under-carousel-menu > div{
+    width:  83.056vw;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.under-carousel-menu > div > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .uc-text{
@@ -275,7 +291,7 @@ export default {
     gap: 24px;
 }
 .carousel-indicators li{
-    width: 78px;
+    width: 72px;
     position: relative;
 }
 
@@ -288,7 +304,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  width: 78px;
+  width: 72px;
   height: 5px;
   border-radius: 3px;
   z-index: 100;
@@ -302,6 +318,55 @@ export default {
     }
     100% {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 949px) {
+    .imageSlider .imageSlider-nav .next, 
+    .imageSlider .imageSlider-nav .prev {
+        width: 60px;
+        height: 60px;
+    }
+    .under-carousel-menu{
+        height: 340px;
+    }
+    .under-carousel-menu > div{
+        justify-content: space-around;
+        gap: 30px;
+        width: 196px;
+    }
+    .Head-Title-Text{
+        height: max-content;
+        padding: 40px 0 40px 0;
+    }
+}
+
+
+@media screen and (max-width: 655px) {
+    .imageSlider .imageSlider-nav .next, 
+    .imageSlider .imageSlider-nav .prev {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .carousel-indicators{
+        position: absolute;
+        /* gap: 24px; */
+    }
+    .carousel-indicators li{
+        width: 50px;
+    }
+    .active span {
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 512px) {
+    .carousel-indicators li{
+        width: 20px;
+    }
+    .active span {
+        width: 20px;
     }
 }
 </style>
